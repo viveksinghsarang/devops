@@ -14,15 +14,15 @@ app.post('/process', async (req, res) => {
   const data = req.body;
 
   // Forward data to Python service
-  await axios.post('http://ip:9001/process', data);
+  await axios.post('http://give_ec2_instance_IP:9001/process', data);
 
   // Forward data to Go service
-  await axios.post('http://ip:5000/process', data);
+  await axios.post('http://give_ec2_instance_IP:5000/process', data);
 
   res.json({ message: 'Request forwarded to Python and Go services.' });
 });
 
 app.listen(port, () => {
-  console.log(`Node.js service is listening at http://ip:${port}`);
+  console.log(`Node.js service is listening at http://give_ec2_instance_IP:${port}`);
 });
 
