@@ -23,6 +23,6 @@ app.post('/process', async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Node.js service is listening at http://3.108.218.107:${port}`);
+  console.log(`Node.js service is listening at http://ip:${port}`);
 });
 
