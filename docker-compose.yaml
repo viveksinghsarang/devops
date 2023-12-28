@@ -2,7 +2,7 @@ services:
   python:
     image: viveksinghsarang/python:v1
     volumes:
-      - .:/app
+      - ./:/app
     ports:
       - "9001:9001"
     working_dir: /app
@@ -11,7 +11,7 @@ services:
   golang:
     image: viveksinghsarang/golang:v1
     volumes:
-      - .:/app
+      - ./:/app
     ports:
       - "5000:5000"
     working_dir: /app
@@ -20,7 +20,7 @@ services:
   node:
     image: viveksinghsarang/node:v1
     volumes:
-      - .:/app
+      - ./:/app
     ports:
       - "3000:3000"
     working_dir: /app
