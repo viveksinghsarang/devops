@@ -1,0 +1,27 @@
+services: 
+  python:
+    image: python:v1
+    volumes:
+      - /vivek:/vivek
+    ports:
+      - "9001:9001"
+    working_dir: /vivek
+    command: python python_service.py
+
+  golang:
+    image: golang:v1
+    volumes:
+      - /vivek:/vivek
+    ports:
+      - "5000:5000"
+    working_dir: /vivek
+    command: go run go_service.go
+
+  node:
+    image: node:v1
+    volumes:
+      - /vivek:/vivek
+    ports:
+      - "3000:3000"
+    working_dir: /vivek
+    command: node nodejs_service.js
