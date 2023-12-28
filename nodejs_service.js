@@ -14,10 +14,10 @@ app.post('/process', async (req, res) => {
   const data = req.body;
 
   // Forward data to Python service
-  await axios.post('http://3.108.218.107:9001/process', data);
+  await axios.post('http://ip:9001/process', data);
 
   // Forward data to Go service
-  await axios.post('http://3.108.218.107:5000/process', data);
+  await axios.post('http://ip:5000/process', data);
 
   res.json({ message: 'Request forwarded to Python and Go services.' });
 });
