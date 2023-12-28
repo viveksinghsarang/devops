@@ -1,27 +1,27 @@
 services: 
   python:
-    image: python:v1
+    image: viveksinghsarang/python:v1
     volumes:
-      - /vivek:/vivek
+      - .:/app
     ports:
       - "9001:9001"
-    working_dir: /vivek
+    working_dir: /app
     command: python python_service.py
 
   golang:
-    image: golang:v1
+    image: viveksinghsarang/golang:v1
     volumes:
-      - /vivek:/vivek
+      - .:/app
     ports:
       - "5000:5000"
-    working_dir: /vivek
+    working_dir: /app
     command: go run go_service.go
 
   node:
-    image: node:v1
+    image: viveksinghsarang/node:v1
     volumes:
-      - /vivek:/vivek
+      - .:/app
     ports:
       - "3000:3000"
-    working_dir: /vivek
+    working_dir: /app
     command: node nodejs_service.js
