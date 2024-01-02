@@ -2,8 +2,6 @@ FROM python:latest
 
 WORKDIR /app
 
-COPY . /app
-
 # Install Python dependencies
 RUN pip install flask
 
