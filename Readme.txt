@@ -1,22 +1,15 @@
-Pull the images from the dockerhub:
-docker pull viveksinghsarang/node:v1
-docker pull viveksinghsarang/golang:v1
-docker pull viveksinghsarang/python:v1
+Clone the git repo on the server.
+git clone https://github.com/viveksinghsarang/devops
 
-If you want to create an image from scratch:-
-First pull all the latest images of python, golang and node.
-Then install all the dependencies:-
+Copy the contents to /app directory.
+cp devops /app
 
-Install this at node image:-
-npm install express axios body-parser
+Then run the below cmd to up the docker containers:-
+docker compose up --build
 
-Install this at python image:-
-pip install flask
+To check the service is up, test it from postman:-
+Post http://ip:3000/process
 
-Install this at golang image:-
-go mod init go_service.go
-go get -u github.com/gin-gonic/gin
-
-To run the application:-
-
-docker-compose up
+{
+  "data":[3, 4, 0, 7, 9, 2, 1, 5]
+}
