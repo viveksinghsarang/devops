@@ -2,8 +2,6 @@ FROM node:latest
 
 WORKDIR /app
 
-COPY . /app
-
 # Install Node.js dependencies
 RUN npm install express axios body-parser
 
